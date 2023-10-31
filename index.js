@@ -1,5 +1,5 @@
 const inquire = require('inquirer');
-const mysql = require('mysql2');
+const { viewDepartment, viewRoles, viewEmployees, addDepartment, addRole, addEmployee, updateEmployeeRole } = require('./queries');
 
 inquire
     .prompt([
@@ -9,10 +9,10 @@ inquire
             type: 'list',
             choices: [
                 'View all departments',
-                'View all rolls',
+                'View all roles',
                 'View all employees',
                 'Add a department',
-                'Add a roll',
+                'Add a role',
                 'Add an employee',
                 'Update an employee role'
             ]
@@ -20,10 +20,10 @@ inquire
     ]).then(answers => {
         switch (answers.operation) {
             case 'View all departments':
-                viewDepartments();
+                viewDepartment();
                 break;
             case 'View all roles':
-                viewRolls();
+                viewRoles();
                 break;
             case 'View all employees':
                 viewEmployees();
@@ -32,13 +32,13 @@ inquire
                 addDepartment();
                 break;
             case 'Add a roll':
-                addRoll();
+                addRole();
                 break;
             case 'Add an employee':
                 addEmployee();
                 break;
             case 'Update an employee role':
-                updateEmployeeRoll();
+                updateEmployeeRole();
                 break;
         }
     });

@@ -9,8 +9,8 @@ CREATE TABLE department(
     name VARCHAR(30) NOT NULL
 );
 
-DROP TABLE IF EXISTS role;
-CREATE TABLE role(
+DROP TABLE IF EXISTS roles;
+CREATE TABLE roles(
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(30),
     salary DECIMAL,
@@ -23,5 +23,6 @@ CREATE TABLE employee(
     first_name VARCHAR(30),
     last_name VARCHAR(30),
     role_id INT NOT NULL,
-    manager_id INT 
+    manager_id INT
 );
+
